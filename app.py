@@ -18,9 +18,9 @@ def predict():
     final_features = [np.array(int_features)]
     prediction = model.predict(final_features)
 
-    output = prediction[1]
+    output = prediction[0]
 
-    return render_template('index.html', prediction_text='KTM BIKE Purchased {}%'.format(output))
+    return render_template('index.html', prediction_text='KTM BIKE Purchased {}'.format(output))
 
 
 if __name__ == "__main__":
