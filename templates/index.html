@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>KTM BIKE</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<style> 
+input{border:'none';
+}
+</style> 
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predicting KTM Bike Buy or Not</h1>
+
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+        <input type='Text' name="Age" placeholder='AGE'/>
+        
+        <select name="Gender">
+            <option value="1">Female</option>
+            <option value="2">Male</option>            
+        </select> 
+
+        <select name="Occupation">
+            <option value="1">Unemployed</option>
+            <option value="2">Self Employed</option>
+            <option value="3">Professional</option>
+            <option value="4">Student</option>
+        </select> 
+        
+        <select name="PhoneType">
+            <option value="1">Low End</option>
+            <option value="2">Average</option>
+            <option value="3">High End</option>
+        </select> 
+        
+        <select name="CurrentBike">
+            <option value="1">No Bike</option>
+            <option value="2">Below 125</option>
+            <option value="3">125 to 180</option>
+            <option value="4">180 to 220</option> 
+            <option value="5">220 and Above</option>
+        </select>
+        
+        <select name="Relationship">
+            <option value="1">Married</option>
+            <option value="2">Single</option>
+            <option value="3">Complicated</option>
+            <option value="4">Committed</option>
+        </select>
+
+    	<!-- <input type="text" name="Gender" placeholder="Gender" required="required" />
+      <input type="text" name="Occupation" placeholder="Occupation" required="required" />
+      <input type="text" name="PhoneType" placeholder="PhoneType" required="required" /> 
+		  <input type="text" name="CurrentBike" placeholder="CurrentBike" required="required" />
+		  <input type="text" name="Relationship" placeholder="Relationship" required="required" /> -->
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
