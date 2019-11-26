@@ -86,7 +86,7 @@ classifier.fit(X_train,Y_train)
 pickle.dump(classifier, open('model.pkl','wb'))
 
 model = pickle.load(open('model.pkl','rb'))
-print((model.predict_proba([[22,1,1,1,2,1]])*100).tolist()[0][1])
+#print((model.predict_proba([[22,1,1,1,2,1]])*100).tolist()[0][1])
 
 
 
